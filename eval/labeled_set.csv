@@ -1,0 +1,9 @@
+message_id,subject,body,sender,expected_intent,requires_citation,requires_escalate
+m001,Do you have any open slips this weekend?,"Hi, do you have any transient slips open for Fri-Sun? We're a 32ft sailboat.",guest1@example.com,availability,true,false
+m002,rates,What's your rate for a monthly slip?,guest2@example.com,rate_card,true,false
+m003,Hours,What time does the office close today?,guest3@example.com,hours,true,false
+m004,fuel dock,Is the fuel dock open on Sundays?,guest4@example.com,fuel,true,false
+m005,how to get there,Can you send directions from the highway?,guest5@example.com,directions,true,false
+m006,need to cancel,"I need to cancel my reservation for next week, what's the refund?",guest6@example.com,cancellation,true,true
+m007,insurance question,Do I need to send proof of insurance before you'll hold my slip?,guest7@example.com,insurance_change,true,true
+m008,random,Do you sell ice cream at the ship store?,guest8@example.com,unclassified,false,true
