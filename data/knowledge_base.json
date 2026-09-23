@@ -1,0 +1,26 @@
+{
+  "hours": {
+    "text": "Office hours are 8am to 6pm daily, April through October. November through March: 9am to 5pm, closed Tuesdays.",
+    "source": "docs/hours.md#season"
+  },
+  "rate_card": {
+    "text": "Transient slip: $2.50/ft/night. Monthly slip: $14/ft. Campsite (RV, full hookup): $65/night. Campsite (tent): $35/night.",
+    "source": "docs/rate_card.md#2026"
+  },
+  "fuel": {
+    "text": "Diesel and gas available at the fuel dock, 8am to 5pm daily in season. Card-only after hours.",
+    "source": "docs/policies.md#fuel"
+  },
+  "cancellation_policy": {
+    "text": "Reservations cancelled 7+ days out: full refund minus $25 fee. Under 7 days: 50% refund. No-shows: no refund.",
+    "source": "docs/policies.md#cancellation"
+  },
+  "directions": {
+    "text": "From I-95, take exit 42 to Route 1 South. Marina entrance is 2 miles on the right, past the gas station.",
+    "source": "docs/directions.md"
+  },
+  "insurance_requirement": {
+    "text": "All vessels over 20ft require proof of liability insurance ($300k minimum) on file before a slip is assigned.",
+    "source": "docs/policies.md#insurance"
+  }
+}
