@@ -1,0 +1,39 @@
+# Replays a labeled set against a live agent endpoint, run from a laptop
+# with no server or deploy step -- see run_eval.py for a zero-dependency
+# version of the same idea.
+#
+# Usage: npx promptfoo eval -c eval/promptfooconfig.yaml
+description: "Labeled set replay"
+
+providers:
+  - id: http
+    config:
+      url: http://127.0.0.1:8000/agent/respond
+      method: POST
+      headers:
+        Content-Type: application/json
+      body:
+        message_id: "{{message_id}}"
+        subject: "{{subject}}"
+        body: "{{body}}"
+        sender: "{{sender}}"
+      transformResponse: json
+
+tests:
+  - vars: { message_id: m001, subject: "Do you have any open slips this weekend?", body: "Hi, do you have any transient slips open for Fri-Sun? We're a 32ft sailboat.", sender: guest1@example.com }
+    assert:
+      - type: is-json
+      - type: javascript
+        value: "output.intent === 'availability'"
+      - type: javascript
+        value: "output.citations.length > 0"
+  - vars: { message_id: m006, subject: "need to cancel", body: "I need to cancel my reservation for next week, what's the refund?", sender: guest6@example.com }
+    assert:
+      - type: javascript
+        value: "output.intent === 'cancellation'"
+      - type: javascript
+        value: "output.escalate === true"
+  - vars: { message_id: m008, subject: "random", body: "Do you sell ice cream at the ship store?", sender: guest8@example.com }
+    assert:
+      - type: javascript
+        value: "output.escalate === true"
